@@ -1,0 +1,11 @@
+<div class="well poinable">
+  <a (click)='toggleContent()'>
+    <h4>
+      <ng-content select='[well-title]'>
+      </ng-content>
+    </h4>
+  </a>
+  <ng-content *ngIf='visible'
+              select='[well-body]'>
+  </ng-content>
+</div>
