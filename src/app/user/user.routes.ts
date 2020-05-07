@@ -6,7 +6,6 @@ export const userRoutes: Routes = [
   {
     path: "profile",
     component: UserProfileComponent,
-    canDeactivate: ["canDeactivateCreateEvent"],
   },
   {
     path: "login",

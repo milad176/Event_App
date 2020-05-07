@@ -13,7 +13,6 @@ export class UserProfileComponent implements OnInit {
   profileForm: FormGroup;
   private firstName: FormControl;
   private lastName: FormControl;
-  isDirty: boolean = true;
 
   constructor(
     private authService: AuthService,
@@ -43,7 +42,6 @@ export class UserProfileComponent implements OnInit {
       this.authService
         .updateCurrentUser(formValues.firstName, formValues.lastName)
         .subscribe(() => {
-          this.isDirty = false;
           this.toastr.success("profile saved");
         });
       // this.router.navigate(["/events"]);

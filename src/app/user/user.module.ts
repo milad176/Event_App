@@ -14,19 +14,5 @@ import { LoginComponent } from "./user-login/login.component";
     ReactiveFormsModule,
   ],
   declarations: [UserProfileComponent, LoginComponent],
-  providers: [
-    {
-      provide: "canDeactivateCreateEvent",
-      useValue: checkDirtyState,
-    },
-  ],
 })
 export class UserModule {}
-
-export function checkDirtyState(component: UserProfileComponent) {
-  if (component.isDirty) {
-    return window.confirm("Do you really want to logout?");
-  }
-
-  return true;
-}
